@@ -95,6 +95,63 @@ public class Searcher {
         return result;
     }
 
+    public List<Product> searchByPriceRange(List<Product> products, double minPrice, double maxPrice, boolean ascendingOrder) {
+        List<Product> results = new ArrayList<>();
+    
+        sortProducts(2, ascendingOrder);
+    
+        int firstIndex = findFirstIndex(products, minPrice);
+        int lastIndex = findLastIndex(products, maxPrice);
+    
+        if (firstIndex >= 0 && lastIndex >= 0) {
+            for (int i = firstIndex; i <= lastIndex; i++) {
+                results.add(products.get(i));
+            }
+        }
+    
+        return results;
+    }
+    
+    private int findFirstIndex(List<Product> products, double minPrice) {
+        int left = 0;
+        int right = products.size() - 1;
+        int result = -1;
+    
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            double price = products.get(mid).getPrice();
+    
+            if (price >= minPrice) {
+                result = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+    
+        return result;
+    }
+    
+    private int findLastIndex(List<Product> products, double maxPrice) {
+        int left = 0;
+        int right = products.size() - 1;
+        int result = -1;
+    
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            double price = products.get(mid).getPrice();
+    
+            if (price <= maxPrice) {
+                result = mid;
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+    
+        return result;
+    }
+
     public void sortProducts(int variableToSort, boolean ascendingOrder) {
         Comparator<Product> comparator = null;
         switch (variableToSort) {
