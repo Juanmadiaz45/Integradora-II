@@ -152,6 +152,63 @@ public class Searcher {
         return result;
     }
 
+    public List<Product> searchByTimesPurchasedRange(List<Product> products, int minTimesPurchased, int maxTimesPurchased, boolean ascendingOrder) {
+        List<Product> results = new ArrayList<>();
+    
+        sortProducts(4, ascendingOrder);
+    
+        int firstIndex = findFirstIndexByTimesPurchased(products, minTimesPurchased);
+        int lastIndex = findLastIndexByTimesPurchased(products, maxTimesPurchased);
+    
+        if (firstIndex >= 0 && lastIndex >= 0) {
+            for (int i = firstIndex; i <= lastIndex; i++) {
+                results.add(products.get(i));
+            }
+        }
+    
+        return results;
+    }
+    
+    private int findFirstIndexByTimesPurchased(List<Product> products, int minTimesPurchased) {
+        int left = 0;
+        int right = products.size() - 1;
+        int result = -1;
+    
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            int timesPurchased = products.get(mid).getTimesPurchased();
+    
+            if (timesPurchased >= minTimesPurchased) {
+                result = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+    
+        return result;
+    }
+    
+    private int findLastIndexByTimesPurchased(List<Product> products, int maxTimesPurchased) {
+        int left = 0;
+        int right = products.size() - 1;
+        int result = -1;
+    
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            int timesPurchased = products.get(mid).getTimesPurchased();
+    
+            if (timesPurchased <= maxTimesPurchased) {
+                result = mid;
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+    
+        return result;
+    }
+
     public List<Product> searchProductsByCategory(Category category, boolean ascendingOrder) {
         List<Product> results = new ArrayList<>();
 
