@@ -152,6 +152,20 @@ public class Searcher {
         return result;
     }
 
+    public List<Product> searchProductsByCategory(Category category, boolean ascendingOrder) {
+        List<Product> results = new ArrayList<>();
+
+        sortProducts(3, ascendingOrder);
+    
+        for (Product product : products) {
+            if (product.getCategory().equals(category)) {
+                results.add(product);
+            }
+        }
+    
+        return results;
+    }
+
     public void sortProducts(int variableToSort, boolean ascendingOrder) {
         Comparator<Product> comparator = null;
         switch (variableToSort) {
