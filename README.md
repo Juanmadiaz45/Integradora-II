@@ -20,3 +20,12 @@
   Densidad de errores - fallos = 0,65
   Confiabilidad = 0,35
   Completitud = 1,777
+ 
+ -----------------------------------------
+ 
+ Iteración 4
+  Densidad de errores - fallos = 0,425
+  Confiabilidad = 0,575
+  Completitud = 1,8888
+  
+  ---------------------------------------
