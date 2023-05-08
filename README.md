@@ -30,9 +30,16 @@
   
   ---------------------------------------
  
- Iteración 4
+ Iteración 5
   Densidad de errores - fallos = 0,525
   Confiabilidad = 0,475
   Completitud = 2,11111
+  
+  ---------------------------------------
+  
+  Iteración 6
+  Densidad de errores - fallos = 0,3
+  Confiabilidad = 0,7
+  Completitud = 0,7
   
   ---------------------------------------
