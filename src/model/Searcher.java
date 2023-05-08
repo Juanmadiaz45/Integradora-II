@@ -280,6 +280,18 @@ public class Searcher {
         return results;
     }
 
+    public List<Order> searchOrdersByDate(Date date) {
+        List<Order> results = new ArrayList<>();
+    
+        for (Order order : orders) {
+            if (order.getDate().equals(date)) {
+                results.add(order);
+            }
+        }
+    
+        return results;
+    }
+
     public void sortProducts(int variableToSort, boolean ascendingOrder) {
         Comparator<Product> comparator = null;
         switch (variableToSort) {
