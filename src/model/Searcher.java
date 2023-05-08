@@ -38,63 +38,6 @@ public class Searcher {
         return results;
     }
 
-    public List<Product> searchByNameInterval(List<Product> products, String startPrefix, String endPrefix, boolean ascendingOrder) {
-        List<Product> results = new ArrayList<>();
-    
-        sortProducts(1, ascendingOrder);
-    
-        int firstIndex = findFirstIndexByName(products, startPrefix);
-        int lastIndex = findLastIndexByName(products, endPrefix);
-    
-        if (firstIndex >= 0 && lastIndex >= 0) {
-            for (int i = firstIndex; i <= lastIndex; i++) {
-                results.add(products.get(i));
-            }
-        }
-    
-        return results;
-    }
-    
-    private int findFirstIndexByName(List<Product> products, String startPrefix) {
-        int left = 0;
-        int right = products.size() - 1;
-        int result = -1;
-    
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            String productName = products.get(mid).getName();
-    
-            if (productName.compareToIgnoreCase(startPrefix) >= 0) {
-                result = mid;
-                right = mid - 1;
-            } else {
-                left = mid + 1;
-            }
-        }
-    
-        return result;
-    }
-    
-    private int findLastIndexByName(List<Product> products, String endPrefix) {
-        int left = 0;
-        int right = products.size() - 1;
-        int result = -1;
-    
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            String productName = products.get(mid).getName();
-    
-            if (productName.compareToIgnoreCase(endPrefix) <= 0) {
-                result = mid;
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-    
-        return result;
-    }
-
     public List<Product> searchByPriceRange(List<Product> products, double minPrice, double maxPrice, boolean ascendingOrder) {
         List<Product> results = new ArrayList<>();
     
@@ -208,7 +151,64 @@ public class Searcher {
     
         return result;
     }
-
+    
+    public List<Product> searchByNameInterval(List<Product> products, String startPrefix, String endPrefix, boolean ascendingOrder) {
+        List<Product> results = new ArrayList<>();
+    
+        sortProducts(1, ascendingOrder);
+    
+        int firstIndex = findFirstIndexByName(products, startPrefix);
+        int lastIndex = findLastIndexByName(products, endPrefix);
+    
+        if (firstIndex >= 0 && lastIndex >= 0) {
+            for (int i = firstIndex; i <= lastIndex; i++) {
+                results.add(products.get(i));
+            }
+        }
+    
+        return results;
+    }
+    
+    private int findFirstIndexByName(List<Product> products, String startPrefix) {
+        int left = 0;
+        int right = products.size() - 1;
+        int result = -1;
+    
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            String productName = products.get(mid).getName();
+    
+            if (productName.compareToIgnoreCase(startPrefix) >= 0) {
+                result = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+    
+        return result;
+    }
+    
+    private int findLastIndexByName(List<Product> products, String endPrefix) {
+        int left = 0;
+        int right = products.size() - 1;
+        int result = -1;
+    
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            String productName = products.get(mid).getName();
+    
+            if (productName.compareToIgnoreCase(endPrefix) <= 0) {
+                result = mid;
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+    
+        return result;
+    }
+    
     public List<Order> searchByBuyerNameInterval(List<Order> orders, String startPrefix, String endPrefix, boolean ascendingOrder) {
         List<Order> results = new ArrayList<>();
     
@@ -266,6 +266,63 @@ public class Searcher {
         return result;
     }
 
+    public List<Order> searchByTotalPriceRange(List<Order> orders, double minPrice, double maxPrice, boolean ascendingOrder) {
+        List<Order> results = new ArrayList<>();
+    
+        sortOrders(2, ascendingOrder);
+    
+        int firstIndex = findTotalPriceFirstIndex(orders, minPrice);
+        int lastIndex = findTotalPriceLastIndex(orders, maxPrice);
+    
+        if (firstIndex >= 0 && lastIndex >= 0) {
+            for (int i = firstIndex; i <= lastIndex; i++) {
+                results.add(orders.get(i));
+            }
+        }
+    
+        return results;
+    }
+    
+    private int findTotalPriceFirstIndex(List<Order> orders, double minPrice) {
+        int left = 0;
+        int right = orders.size() - 1;
+        int result = -1;
+    
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            double price = orders.get(mid).getTotalPrice();
+    
+            if (price >= minPrice) {
+                result = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+    
+        return result;
+    }
+    
+    private int findTotalPriceLastIndex(List<Order> orders, double maxPrice) {
+        int left = 0;
+        int right = orders.size() - 1;
+        int result = -1;
+    
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            double price = orders.get(mid).getTotalPrice();
+    
+            if (price <= maxPrice) {
+                result = mid;
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+    
+        return result;
+    }
+
     public List<Product> searchProductsByCategory(Category category, boolean ascendingOrder) {
         List<Product> results = new ArrayList<>();
 
@@ -279,7 +336,7 @@ public class Searcher {
     
         return results;
     }
-
+    
     public List<Order> searchOrdersByDate(Date date) {
         List<Order> results = new ArrayList<>();
     

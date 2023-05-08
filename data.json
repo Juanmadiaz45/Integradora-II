@@ -1,129 +1,138 @@
 {
   "orders": [
     {
-      "buyerName": "Carla",
-      "products": [
-        {
-          "name": "Bombillo",
-          "description": "Bombillo luz calida",
-          "price": 60000.0,
-          "quantityAvailable": 19,
-          "category": "ELECTRONICS",
-          "timesPurchased": 1
-        }
-      ],
-      "totalPrice": 0.0,
-      "date": "May 7, 2023 6:12:02 PM"
-    },
-    {
       "buyerName": "David",
       "products": [
         {
-          "name": "Bicicleta",
-          "description": "Bicicleta para monta�as",
-          "price": 250000.0,
-          "quantityAvailable": 17,
-          "category": "SPORTS",
-          "timesPurchased": 3
-        }
-      ],
-      "totalPrice": 0.0,
-      "date": "May 7, 2023 6:02:40 PM"
-    },
-    {
-      "buyerName": "Diego",
-      "products": [
+          "name": "Crema hidratante",
+          "description": "Crema para uso de cara y cuerpo",
+          "price": 70000.0,
+          "quantityAvailable": 39,
+          "category": "BEAUTY_AND_PERSONAL_CARE",
+          "timesPurchased": 1
+        },
         {
-          "name": "Caricatura infantil",
-          "description": "Caricatura infantil tipo comic",
-          "price": 20000.0,
-          "quantityAvailable": 8,
+          "name": "Libro de aventuras",
+          "description": "Libro de aventuras para todas las edades",
+          "price": 30000.0,
+          "quantityAvailable": 98,
           "category": "BOOKS",
           "timesPurchased": 2
         }
       ],
       "totalPrice": 0.0,
-      "date": "May 7, 2023 6:14:39 PM"
+      "date": "May 7, 2023 11:21:15 PM"
     },
     {
       "buyerName": "Juan",
       "products": [
         {
-          "name": "Bicicleta",
-          "description": "Bicicleta para monta�as",
-          "price": 250000.0,
-          "quantityAvailable": 18,
-          "category": "SPORTS",
-          "timesPurchased": 2
+          "name": "Cartulina",
+          "description": "Pliego de cartulina color azul",
+          "price": 1200.0,
+          "quantityAvailable": 49,
+          "category": "STATIONERY",
+          "timesPurchased": 1
+        },
+        {
+          "name": "Bombillo",
+          "description": "Bombillo de luz calida",
+          "price": 60000.0,
+          "quantityAvailable": 29,
+          "category": "ELECTRONICS",
+          "timesPurchased": 1
         }
       ],
       "totalPrice": 0.0,
-      "date": "May 7, 2023 5:29:23 PM"
+      "date": "May 7, 2023 11:20:32 PM"
     },
     {
       "buyerName": "Maria",
       "products": [
         {
-          "name": "Caricatura infantil",
-          "description": "Caricatura infantil tipo comic",
-          "price": 20000.0,
-          "quantityAvailable": 9,
+          "name": "Bicicleta",
+          "description": "Bicicleta apta para largas rutas",
+          "price": 150000.0,
+          "quantityAvailable": 15,
+          "category": "SPORTS",
+          "timesPurchased": 5
+        }
+      ],
+      "totalPrice": 150000.0,
+      "date": "May 7, 2023 11:21:41 PM"
+    },
+    {
+      "buyerName": "Sara",
+      "products": [
+        {
+          "name": "Libro de aventuras",
+          "description": "Libro de aventuras para todas las edades",
+          "price": 30000.0,
+          "quantityAvailable": 98,
           "category": "BOOKS",
-          "timesPurchased": 1
+          "timesPurchased": 2
+        },
+        {
+          "name": "Bicicleta",
+          "description": "Bicicleta apta para largas rutas",
+          "price": 150000.0,
+          "quantityAvailable": 15,
+          "category": "SPORTS",
+          "timesPurchased": 5
         }
       ],
       "totalPrice": 0.0,
-      "date": "May 7, 2023 6:06:09 PM"
+      "date": "May 7, 2023 11:20:49 PM"
     }
   ],
   "products": [
     {
       "name": "Bicicleta",
-      "description": "Bicicleta para monta�as",
-      "price": 250000.0,
-      "quantityAvailable": 17,
+      "description": "Bicicleta apta para largas rutas",
+      "price": 150000.0,
+      "quantityAvailable": 15,
       "category": "SPORTS",
-      "timesPurchased": 3
-    },
-    {
-      "name": "Bicicleta",
-      "description": "Bicicleta para monta�as",
-      "price": 250000.0,
-      "quantityAvailable": 17,
-      "category": "SPORTS",
-      "timesPurchased": 3
+      "timesPurchased": 5
     },
     {
       "name": "Bombillo",
-      "description": "Bombillo luz calida",
+      "description": "Bombillo de luz calida",
       "price": 60000.0,
-      "quantityAvailable": 19,
+      "quantityAvailable": 29,
       "category": "ELECTRONICS",
       "timesPurchased": 1
     },
     {
-      "name": "Caricatura infantil",
-      "description": "Caricatura infantil tipo comic",
-      "price": 20000.0,
-      "quantityAvailable": 8,
+      "name": "Cartulina",
+      "description": "Pliego de cartulina color azul",
+      "price": 1200.0,
+      "quantityAvailable": 49,
+      "category": "STATIONERY",
+      "timesPurchased": 1
+    },
+    {
+      "name": "Crema hidratante",
+      "description": "Crema para uso de cara y cuerpo",
+      "price": 70000.0,
+      "quantityAvailable": 39,
+      "category": "BEAUTY_AND_PERSONAL_CARE",
+      "timesPurchased": 1
+    },
+    {
+      "name": "Libro de aventuras",
+      "description": "Libro de aventuras para todas las edades",
+      "price": 30000.0,
+      "quantityAvailable": 98,
       "category": "BOOKS",
       "timesPurchased": 2
     },
     {
-      "name": "Libro de aventuras",
-      "description": "30000",
-      "price": 30000.0,
-      "quantityAvailable": 4,
-      "category": "BOOKS",
-      "timesPurchased": 1
-    },
-    {
-      "name": "Libro de aventuras",
-      "description": "30000",
-      "price": 30000.0,
-      "quantityAvailable": 4,
-      "category": "BOOKS",
-      "timesPurchased": 1
+      "name": "Bicicleta",
+      "description": "Bicicleta apta para largas rutas",
+      "price": 150000.0,
+      "quantityAvailable": 15,
+      "category": "SPORTS",
+      "timesPurchased": 5
     }
   ]
 }
