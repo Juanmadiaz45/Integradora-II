@@ -343,18 +343,17 @@ public class Main{
                             case 9:
 
                                 System.out.print("Ingrese la fecha de compra en el formato (dd/mm/yyyy): ");
+                                reader.nextLine(); 
                                 dateInput = reader.nextLine();
-
+                            
                                 dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                                 date = null;
                                 try {
-
                                     date = dateFormat.parse(dateInput);
-                    
                                 } catch (ParseException e) {
-
+                                    
                                 }
-
+                            
                                 controller.searchOrdersByDate(date);
 
                                 break;
