@@ -209,6 +209,63 @@ public class Searcher {
         return result;
     }
 
+    public List<Order> searchByBuyerNameInterval(List<Order> orders, String startPrefix, String endPrefix, boolean ascendingOrder) {
+        List<Order> results = new ArrayList<>();
+    
+        sortOrders(1, ascendingOrder);
+    
+        int firstIndex = findFirstIndexByBuyerName(orders, startPrefix);
+        int lastIndex = findLastIndexByBuyerName(orders, endPrefix);
+    
+        if (firstIndex >= 0 && lastIndex >= 0) {
+            for (int i = firstIndex; i <= lastIndex; i++) {
+                results.add(orders.get(i));
+            }
+        }
+    
+        return results;
+    }
+    
+    private int findFirstIndexByBuyerName(List<Order> orders, String startPrefix) {
+        int left = 0;
+        int right = orders.size() - 1;
+        int result = -1;
+    
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            String buyerName = orders.get(mid).getBuyerName();
+    
+            if (buyerName.compareToIgnoreCase(startPrefix) >= 0) {
+                result = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+    
+        return result;
+    }
+    
+    private int findLastIndexByBuyerName(List<Order> orders, String endPrefix) {
+        int left = 0;
+        int right = orders.size() - 1;
+        int result = -1;
+    
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            String buyerName = orders.get(mid).getBuyerName();
+    
+            if (buyerName.compareToIgnoreCase(endPrefix) <= 0) {
+                result = mid;
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+    
+        return result;
+    }
+
     public List<Product> searchProductsByCategory(Category category, boolean ascendingOrder) {
         List<Product> results = new ArrayList<>();
 

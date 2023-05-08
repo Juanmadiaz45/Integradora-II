@@ -85,6 +85,22 @@ public class Controller {
         return results;
     }
 
+    public List<Order> searchByBuyerNameInterval(List<Order> orders, String startPrefix, String endPrefix, boolean ascendingOrder){
+        List<Order> results =  searcher.searchByBuyerNameInterval(orders, startPrefix, endPrefix, ascendingOrder);
+        if(orders.isEmpty()) {
+            System.out.println("\nLo siento, el pedido que busca no se encuentra registrado.");
+        } else{
+            for(Order order : results) {
+                System.out.println("\nNombre del comprador: " + order.getBuyerName());
+                System.out.println("Precio total del pedido: " + order.getTotalPrice());
+                System.out.println("Fecha de compra: " + order.getDate());
+                System.out.println("------------------------");
+            }
+        }
+
+        return results;
+    }
+
     public List<Product> searchProductsByCategory(Category category, boolean ascendingOrder) {
         List<Product> results = searcher.searchProductsByCategory(category, ascendingOrder);
         if (results.isEmpty()) {
