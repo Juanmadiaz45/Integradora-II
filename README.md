@@ -1,5 +1,7 @@
 ﻿# Integradora-II
  
+ Juan Manuel Díaz Moreno - A00394477
+ 
  Indicadores 
  
  Iteración 1
