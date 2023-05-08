@@ -43,3 +43,10 @@
   Completitud = 0,7
   
   ---------------------------------------
+  
+  Iteración 7
+  Densidad de errores - fallos = 0,1
+  Confiabilidad = 0,9 
+  Completitud = 0,4
+  
+  ---------------------------------------
