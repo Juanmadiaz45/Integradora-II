@@ -29,3 +29,10 @@
   Completitud = 1,8888
   
   ---------------------------------------
+ 
+ Iteración 4
+  Densidad de errores - fallos = 0,525
+  Confiabilidad = 0,475
+  Completitud = 2,11111
+  
+  ---------------------------------------
