@@ -28,6 +28,25 @@ public class Controller {
         orders.add(order);
     }
 
+    public List<Product> searchByNameInterval(List<Product> products, String startPrefix, String endPrefix, boolean ascendingOrder) {
+        List<Product> results = searcher.searchByNameInterval(products, startPrefix, endPrefix, ascendingOrder);
+        if (results.isEmpty()) {
+            System.out.println("\nLo siento, el producto que busca no se encuentra registrado.");
+        } else {
+            for (Product product : results) {
+                System.out.println("\nNombre: " + product.getName());
+                System.out.println("Descripcion: " + product.getDescription());
+                System.out.println("Precio: " + product.getPrice());
+                System.out.println("Cantidad disponible: " + product.getQuantityAvailable());
+                System.out.println("Categoria: " + product.getCategory());
+                System.out.println("Veces comprado: " + product.getTimesPurchased());
+                System.out.println("------------------------");
+            }
+        }
+        
+        return results;
+    }
+
     public List<Order> getOrders() {
         return orders;
     }
